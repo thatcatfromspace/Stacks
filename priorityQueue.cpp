@@ -37,20 +37,12 @@ void enqueue(int value, int priority){
     std::cout << "Value queued.\n";
 }
 
-int peek(){
+int* peek(){
     node *ptr = head;
-    int maxPriority = 0, index = 0, flag = 0;
-    while (ptr->next != NULL){
-        ptr = ptr->next;
-        if (ptr->priority > maxPriority){
-            maxPriority = ptr->priority;
-            index++;
-        }
-        if (flag > index){
-            index = flag;
-        }
-    }
-    return index;
+    int* returnNode;
+    returnNode[0] = head->value;
+    returnNode[1] = head->priority;
+    return returnNode;
 }
 
 void dequeue(){
@@ -74,6 +66,6 @@ int main(){
     enqueue(4, 5);
     enqueue(3, 2);
     display();
-    
+    std::cout << peek()[0] << " " << peek()[1];
     return 0;
 }
