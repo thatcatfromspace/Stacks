@@ -33,7 +33,7 @@ namespace stacks{  // Basic stack operations
         return stack[top];
     }
 
-    bool isOperator(char c){
+    bool isOperator(char c){ // functions necessary for infix to postfix
         if (c == '+' || c == '-' || c == '*' || c == '/' || c == '^'){
             return true;
         }
