@@ -26,13 +26,12 @@ void towerOfHanoi(int n, Stack& source, Stack& dest, Stack& aux) {
         int x = pop(source);
         push(dest, x);
         cout << "Move disk " << x << " from rod " << (char)(source.top+'A') << " to rod " << (char)(dest.top+'A') << endl;
-    } else {
+    } 
+    else {
         towerOfHanoi(n-1, source, aux, dest);
-        
         int x = pop(source);
         push(dest, x);
         cout << "Move disk " << x << " from rod " << (char)(source.top+'A') << " to rod " << (char)(dest.top+'A') << endl;
-        
         towerOfHanoi(n-1, aux, dest, source);
     }
 }
