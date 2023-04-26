@@ -6,10 +6,10 @@ struct node{
     node* next;
 }; 
 
-node* head = NULL;
+node* head = nullptr;
 
 bool isEmpty(){
-    return head == NULL;
+    return head == nullptr;
 }
 
 void enqueue(int value, int priority){
@@ -17,7 +17,7 @@ void enqueue(int value, int priority){
     temp->value = value;
     temp->priority = priority;
     if (isEmpty()){
-        temp->next = NULL;
+        temp->next = nullptr;
         head = temp;
         std::cout << "Value queued.\n";
         return;
@@ -29,7 +29,7 @@ void enqueue(int value, int priority){
     }
 
     node* ptr = head;
-    while (ptr->next != NULL && ptr->next->priority < priority){
+    while (ptr->next != nullptr && ptr->next->priority < priority){
         ptr = ptr->next;
     }
     temp->next = ptr->next;
@@ -53,7 +53,7 @@ void dequeue(){
 
 void display(){
     node* ptr = head;
-    while (ptr != NULL){
+    while (ptr != nullptr){
         std::cout << "Priority: " << ptr->priority << " Value: "  << ptr->value << std::endl;
         ptr = ptr->next;
     }
